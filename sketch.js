@@ -8,11 +8,12 @@ function preload() {
 function setup() {
   createCanvas(400, 400);
   fill('#ED225D');
+  textFont(myFont);
+  textSize(36);
 }
 
 function draw() {
   background(220);
-  textFont(myFont);
-  textSize(36);
+  
   text('p5*js', 10, 50);
 }
