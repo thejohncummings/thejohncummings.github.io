@@ -4,6 +4,11 @@ let droppedImage;
 let textInputLine1;
 let textInputLine2;
 let exportButton;
+let font;
+
+function preload() {
+  font = loadFont('assets/BASKVILL.ttf');
+}
 
 function setup() {
   let canvas = createCanvas(400, 400);
@@ -11,7 +16,7 @@ function setup() {
 
   let dropArea = select("#drop_area");
   dropArea.drop(gotFile);
-
+  textFont(font);
   textInputLine1 = select("#text_line1");
   textInputLine2 = select("#text_line2");
   exportButton = select("#export_button");
@@ -61,4 +66,10 @@ function exportImage() {
     graphics.save(imageFileName);
     console.log(`Image with text overlay saved as ${imageFileName}`);
   }
+}
+
+function drawRect() {
+  fill(100, 100, 100, 50)
+  noStroke()
+  rect(0, 200, width, 150)
 }
